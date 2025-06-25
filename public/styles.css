@@ -10,6 +10,10 @@ body {
   font-family: sans-serif;
   margin: 2rem;
   background-color: #f1f1f1;
+  background-image: url(/img/jedi.png);
+  background-repeat: no-repeat;
+  background-position: top right;
+  background-size: 15%;
 }
 
 .filters {
