@@ -6,7 +6,6 @@ This is a simple single-page application built using HTMX and Node.js (Express).
 
 - Filter characters by gender and affiliation
 - Search characters by name
-- Real-time updates as you type or change filters
 - Reset button to clear all filters and search input
 
 ## Setup
