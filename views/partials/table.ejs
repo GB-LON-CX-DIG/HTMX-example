@@ -1,0 +1,20 @@
+<table>
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Name</th>
+      <th>Gender</th>
+      <th>Affiliation</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% characters.forEach(char => { %>
+      <tr>
+        <td><%= char.id %></td>
+        <td><%= char.name %></td>
+        <td><%= char.gender %></td>
+        <td><%= char.affiliation %></td>
+      </tr>
+    <% }) %>
+  </tbody>
+</table>

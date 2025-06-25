@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Star Wars Characters</title>
+  <script src="https://unpkg.com/htmx.org@1.9.2"></script>
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <h1 class="title">Star Wars Characters</h1>
+  <form class="filters"
+    id="filters" 
+    hx-get="/" 
+    hx-target="#table" 
+    hx-push-url="true"
+    hx-trigger="change from:select, keyup changed delay:200ms from:input">
+  <input
+    type="text"
+    name="search"
+    placeholder="Search by name"
+    value="<%= filters.search || '' %>"
+  />
+
+  <select name="gender">
+    <option value="all">All Genders</option>
+    <% uniqueGenders.forEach(g => { %>
+      <option value="<%= g %>" <%= filters.gender === g ? 'selected' : '' %>><%= g %></option>
+    <% }) %>
+  </select>
+
+  <select name="affiliation">
+    <option value="all">All Affiliations</option>
+    <% uniqueAffiliations.forEach(a => { %>
+      <option value="<%= a %>" <%= filters.affiliation === a ? 'selected' : '' %>><%= a %></option>
+    <% }) %>
+  </select>
+
+  <a class="btn-reset" href="/">Reset</a>
+</form>
+
+<div id="table">
+  <%- include('partials/table', { characters }) %>
+</div>
+
+</body>
+</html>
